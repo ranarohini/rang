@@ -1,0 +1,21 @@
+<head>
+  <title>Rang</title>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-2">
+      <div class="thumbnail">
+        <%= image_tag @product.full_image_url, size: "400x450" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3> <%= @product.name %> </h3>
+      <p> <%= number_to_currency @product.price.to_i %> </p>
+      <p><%= @product.description %></p> <br> 
+      <div class="center">
+        <%= link_to "Add to cart", add_cart_path, method: :post, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+</body>

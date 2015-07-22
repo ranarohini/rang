@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rang</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<div class="wrapper">
+  <body>
+    <%= render partial: 'shared/nav' %>
+    <div class="container">
+      <%= content_tag :div, notice, class: "bg-success" %>
+      <%= content_tag :div, alert, class: "bg-danger" %>
+      <%= yield %>
+    </div>
+  </body>
+  <div class="push"></div>
+</div>
+<%= render 'shared/footer' %>
+</html>

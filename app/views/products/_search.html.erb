@@ -1,0 +1,7 @@
+<%# product search form %>
+<%= form_tag(products_path, method: "get") do %>
+  <%= label_tag(:search, "Search:") %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= button_tag("Search", value: "Search", class: "btn btn-default btn-sm") %>
+  <%= link_to "Reset", products_path, class: "btn btn-default btn-sm" %>
+<% end %>

@@ -1,0 +1,7 @@
+<% if @cart %>
+  <ul class="nav navbar-nav">
+      <%= link_to cart_path do %>
+        <span class="glyphicon glyphicon-shopping-cart" ><%= "#{@cart.count}" %></span>
+      <% end %>
+  </ul>
+<% end %>

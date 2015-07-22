@@ -1,0 +1,47 @@
+<div class="panel panel-clr col-md-8 col-md-offset-2">
+  <div class="panel-heading panel-clr">
+  <h1 class="panel-title">Shopping Cart</h1>
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table" role="grid">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cart.items.each do |item| %>
+            <tr>
+              <td> 
+                <%= image_tag item.product.full_image_url, size: "50x50" %> <%= link_to item.product.name, item.product %>
+              </td>
+              <td><%= item.quantity %></td>
+              <td><%= number_to_currency item.total_price %></td>
+              <td>
+                  <%= link_to remove_item_path(item), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <span class="glyphicon glyphicon-remove" ></span>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td><%= number_to_currency @cart.total_price %> </td>
+          <td> </td>
+        </tr>
+      </table>
+    </div>
+    <p>
+      <center>
+      <%= link_to "Checkout", checkout_cart_path, class: "btn btn-primary" %>
+      &nbsp; &nbsp; <%= link_to "Continue Shopping", products_path, class: "btn btn-primary" %>
+    </center>
+    </p>
+  </div>
+</div>

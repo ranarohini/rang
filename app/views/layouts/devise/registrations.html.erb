@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rang</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<div class="wrapper">
+  <body>
+    <%= render partial: 'shared/nav' %>
+    <%= render partial: 'layouts/devise/container' %>
+  </body>
+  <div class="push"></div>
+</div>
+<%= render 'shared/footer' %>
+</html>

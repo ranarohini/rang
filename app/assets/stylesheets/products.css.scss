@@ -1,0 +1,67 @@
+.jumbotron {
+  height: 300px;
+  background-image: url("https://s3-ap-southeast-2.amazonaws.com/rang.indian.handicrafts/rang-bg.jpg");
+  background-size: cover;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+  background: #FFFFEA;
+  color: #663300;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -50px;
+}
+
+.footer, .push {
+    height: 50px;
+}
+
+.navbar {
+  background: #663300;
+  color: #FFFFEA;
+  border-color: #663300;
+  box-shadow: none;
+}
+
+.navbar-default .navbar-brand {
+  background: #663300;
+  color: #FFFFEA;
+  box-shadow: none;
+}
+
+.btn-primary, .btn-primary:hover{
+  background: #663300;
+  color: #FFFFEA;
+  border: none;
+}
+
+.glyphicon {
+  background: #663300;
+  color: #FFFFEA;
+}
+
+.dropdown-menu {
+  background: #663300;
+  color: #FFFFEA;
+}
+
+.panel-clr {
+  background: #FFFFEA;
+  color: #663300;
+  border-color: #663300;
+}
+
+.form {
+ background: #FFFFEA;
+ color: #663300;
+ border-color: #663300;
+}
+
