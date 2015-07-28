@@ -16,7 +16,7 @@ gem 'activemerchant', '~> 1.52.0'
 
 group :development, :test do
   gem 'byebug'
-  gem 'sqlite3',      '~> 1.3'
+  gem 'sqlite3'
   gem 'factory_girl_rails', '~> 4.2'
   gem 'web-console', '~> 2.0'
   gem 'spring'
