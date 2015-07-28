@@ -1,0 +1,62 @@
+<container>
+  <div class="panel panel-clr col-md-8 col-md-offset-2">
+    <div class="panel-heading panel-clr">
+      <h1 class="panel-title">Profile</h1>
+    </div>
+    <div class="panel-body">
+      <%= form_for @user, html: { class: 'well form-horizontal' } do |f| %>
+        <div class="row">
+          <div class="col-md-5">
+            <div class="form-group">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :email %>
+              <%= f.text_field :email, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :contact_number %>
+              <%= f.text_field :contact_number, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="col-md-5 col-md-offset-1">
+            <div class="form-group">
+              <%= f.label :address_1 %>
+              <%= f.text_field :address_1, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :address_2 %>
+              <%= f.text_field :address_2, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :city %>
+              <%= f.text_field :city, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :state %>
+              <%= f.text_field :state, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :country %>
+              <%= f.text_field :country, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :postcode %>
+              <%= f.text_field :postcode, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+        <center>
+          <%= f.submit 'Save', class: 'btn btn-primary' %>
+          &nbsp; &nbsp;
+          <%= link_to "Cancel", products_path, class: "btn btn-primary" %>
+        </center>
+      <% end %>
+    </div>
+  </div>
+</container>

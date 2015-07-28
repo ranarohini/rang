@@ -1,0 +1,13 @@
+<%= form_for @order_form, url: orders_path, html: { class: 'well form-horizontal' } do |f| %>
+  <%= f.fields_for :user, f.object.user do |u| %>
+    <div class ="row">
+      <div class ="col-md-8 col-md-offset-2">
+        <h5> <center> Shopping Cart <center> </h5>
+        <%= render 'carts/shop_cart' %>
+        <center>
+          <%= f.submit 'Confirm Order', class: 'btn btn-primary' %>
+        </center>
+      </div>
+    </div>
+  <% end %>
+<% end %>

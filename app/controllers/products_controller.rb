@@ -1,7 +1,7 @@
 class ProductsController < SessionsController
-  before_action :get_product, only:[:show]
+  before_action :get_product, only: [:show]
   before_filter :initialize_cart
-  
+
   def index
     @products = Product.search(params[:search]).paginate(page: params[:page])
   end
@@ -16,5 +16,4 @@ class ProductsController < SessionsController
       redirect_to products_path
     end
   end
-
 end

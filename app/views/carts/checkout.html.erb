@@ -1,0 +1,9 @@
+<div class="panel panel-clr col-md-8 col-md-offset-2">
+  <div class="panel-heading panel-clr">
+  <h1 class="panel-title"> Checkout </h1>
+  </div>
+  <div class="panel-body">
+    <%= render partial: 'shared/errors', object: @order_form.user.errors %>
+    <%= render 'carts/user_info_form' %>
+  </div>
+</div> 

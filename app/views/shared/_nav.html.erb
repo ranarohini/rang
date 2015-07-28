@@ -26,10 +26,13 @@
         <%= link_to "Contact Us", contacts_path %>
       </li>
     </ul>
-
+    
     <ul class="nav navbar-nav navbar-right">
-        <%= render 'shared/cart' %>
+        <%= render 'shared/cart' %> <br>
         <% if user_signed_in? %>
+          <%= link_to user_path do %>
+            <span class="glyphicon glyphicon-user" > Profile </span> <br>
+          <% end %>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <span class="glyphicon glyphicon-off" > Sign Out</span>
           <% end %>

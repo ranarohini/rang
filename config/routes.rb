@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, controllers: { registrations: 'registrations' }
   root to: 'products#index'
   resources :products, only: [:index, :show]
-  resource  :contacts,       only: [:show]
-  resource  :abouts,       only: [:show]
-  resource  :terms,       only: [:show]
+  resource  :contacts, only: [:show]
+  resource  :abouts, only: [:show]
+  resource  :terms, only: [:show]
   
+  resource  :orders, only: [:index, :create, :show] do
+    get :express_checkout
+  end
+  resource  :user, only: [:show, :update]
+
   resource :cart, only: [:show] do
     post "add", path: "add/:id"
     get :checkout

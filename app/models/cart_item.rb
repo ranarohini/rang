@@ -1,17 +1,18 @@
+# Items in cart
 class CartItem
   attr_accessor :product_id, :quantity
 
-  def initialize product_id, quantity = 1 
+  def initialize(product_id, quantity = 1)
     @product_id = product_id
     @quantity = quantity
   end
 
   # increments product quantity in cart
   def qty_increment
-    @quantity = @quantity + 1
+    @quantity += 1
   end
 
-  # gets product
+  # fetch product
   def product
     Product.find(product_id)
   end
@@ -23,5 +24,4 @@ class CartItem
   # def getproductid
   #  @product_id
   # end
-
 end
