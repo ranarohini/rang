@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.after_initialize do
-  ActiveMerchant::Billing::Base.mode = :production
+  ActiveMerchant::Billing::Base.mode = :test
   paypal_options = {
     login: "merchant_api1.rang.com",
     password: "38TS2WKETRV6YGVB",
