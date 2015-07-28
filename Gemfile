@@ -22,3 +22,8 @@ group :development, :test do
   gem 'spring'
   gem 'rubocop', '~> 0.32'
 end
+
+group :production do
+  gem 'pg', '~>0.18'
+  gem 'rails_12factor'
+end
