@@ -70,4 +70,17 @@ class Cart
   def delete_item(product_id)
     @items.delete_if { |i| i.product_id == product_id }
   end
+
+  def get_items
+    byebug
+    @items.collect do |item|
+      product = item.product
+      {
+        name: product.name, 
+        quantity: item.quantity, 
+        amount: price_in_cents, 
+      }
+    end
+  end
+
 end

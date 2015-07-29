@@ -1,0 +1,20 @@
+<div class="panel panel-clr col-md-8 col-md-offset-2">
+  <div class="panel-heading panel-clr">
+    <h1 class="panel-title">Your Order Summary</h1>
+  </div>
+  <div class="panel-body">
+    <p> Paypal Account: <strong> <%= @order_info[:email] %> </p> 
+    <p> <%= "Total Amount: #{number_to_currency @order_info[:total]}" %> </strong> </p>   
+    <strong> Shipping Address </strong>
+      <address>
+        <%= @order_info[:shipping_address]['name'] %> <br>
+        <%= @order_info[:shipping_address]['address1'] %> <%= @order_info[:shipping_address]['address2'] %> <br>
+        <%= @order_info[:shipping_address]['city'] %>, <%= @order_info[:shipping_address]['state'] %> <%= @order_info[:shipping_address]['zip'] %> </br>
+      </address>
+    <p>
+        <center>
+        <%= link_to 'Complete Purchase', purchase_orders_path(:token => @order_info[:gateway_details][:token], :payer_id => @order_info[:gateway_details][:payer_id]), class: "btn btn-primary" %>
+      </center>
+    </p>
+  </div>
+</div>

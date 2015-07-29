@@ -1,3 +1,4 @@
+<!--Not using -->
 <div class="table-responsive">
   <table class="table" role="grid">
     <thead>
@@ -17,7 +18,7 @@
           <td><%= item.quantity %></td>
           <td><%= number_to_currency item.product.price %></td>
           <td>
-              <%= link_to remove_item_cart_path(item), method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <%= link_to remove_item_cart_path(item), method: :post, data: { confirm: 'Are you sure?' } do %>
               <span class="glyphicon glyphicon-remove" ></span>
             <% end %>
           </td>

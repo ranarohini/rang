@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   
   resource  :orders, only: [:index, :create, :show] do
     get :express_checkout
+    get :review
+    get :purchase
   end
   resource  :user, only: [:show, :update]
 
