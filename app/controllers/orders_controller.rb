@@ -63,6 +63,7 @@ class OrdersController < SessionsController
 
   private
 
+  # parse order info
   def parse_order_info(gateway_response, cart)
     #subtotal, shipping, total = get_totals(cart)
     {

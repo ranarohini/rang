@@ -72,7 +72,6 @@ class Cart
   end
 
   def get_items
-    byebug
     @items.collect do |item|
       product = item.product
       {
