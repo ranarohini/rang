@@ -66,9 +66,8 @@ class Cart
     (total_price * 100).round
   end
 
-  # TODO - delete item from cart
+  # deletes item from cart
   def delete_item(product_id)
-   # @items.delete_if {|product| product.product_id == id }
-    @items.delete product_id
+    @items.delete_if { |i| i.product_id == product_id }
   end
 end

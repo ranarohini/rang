@@ -21,7 +21,7 @@ class CartItem
     product.price * quantity
   end
 
-  # def getproductid
-  #  @product_id
-  # end
+  def getproductid
+    @product_id
+  end
 end

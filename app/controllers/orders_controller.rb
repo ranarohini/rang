@@ -1,6 +1,7 @@
 class OrdersController < SessionsController
   before_filter :initialize_cart
 
+  #paypal express checkout
   def express_checkout
     response = EXPRESS_GATEWAY.setup_purchase(@cart.price_in_cents,
                                               ip: request.remote_ip,
@@ -10,9 +11,26 @@ class OrdersController < SessionsController
     redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
   end
 
+
+  def review
+    if params[:token].nil?
+      redirect_to root_url, :notice => 'Sorry! Something went wrong!' 
+      return
+    end
+
+    gateway_response = response.details_for(params[:token])
+
+    unless gateway_response.success?
+      redirect_to root_url, :notice => "Sorry! Something went wrong with the Paypal purchase. Here's what Paypal said: #{gateway_response.message}" 
+      return
+    end
+
+    redirect_to root_url, :notice => "Processed. Here's what Paypal said: #{gateway_response.message}" 
+    #@order_info = get_order_info gateway_response, @cart
+  end
+
   # creates order
   def create
-    # User.new(white_listed_parameters[:user]
     @order_form = OrderForm.new(
       user: current_user,
       cart: @cart)
@@ -24,15 +42,4 @@ class OrdersController < SessionsController
       render 'carts/checkout'
     end
   end
-
-# private
-
-#   def white_listed_parameters
-#     params
-#       .require(:order_form)
-#       .permit(
-#          user:[
-#           :first_name, :last_name, :email, :contact_number, :address_1, :address_2, :city, :state, :country, :postcode 
-#         ])
-#   end
 end

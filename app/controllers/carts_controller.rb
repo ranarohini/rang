@@ -18,10 +18,13 @@ class CartsController < SessionsController
     @order_form = OrderForm.new user: current_user
   end
 
-  # TODO remove item from cart
+  # removes item from cart
   def remove_item
-    product_id = params[id]
-    session[:cart].delete product_id.to_i
-    @cart.delete_item
+    #byebug
+    product_id = params[:id]
+    product = Product.find(product_id)
+    @cart.delete_item product_id
+    session[:cart] = @cart.serialize
+    redirect_to :back, notice: "#{product.name} removed from your cart."
   end
 end
